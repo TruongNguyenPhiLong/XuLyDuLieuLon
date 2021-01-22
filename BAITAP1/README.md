@@ -7,7 +7,8 @@ MapReduce là một mô hình lập trình được thiết kế bởi Google x�
 Hàm Map : Các xử lý một cặp (key, value), lọc và phân loại dữ liệu. Dữ liệu này input vào hàm Reduce.
 Hàm Reduce : Tiếp nhận các (keyI, valueI) thực hiện tổng hợp dữ liệu.
 Thư viện thủ tục Map() và Reduce() được viết bằng nhiều ngôn ngữ. Cài đặt miễn phí, phổ biến nhất là Apache Hadoop.
-Hoạt động của MapReduce:
+
+### Hoạt động của MapReduce:
 
 - Đọc dữ liệu đầu vào
 
@@ -20,6 +21,7 @@ Hoạt động của MapReduce:
 - Đưa ra kết quả dữ liệu cuối.
 
 *Một ví dụ luồng dữ liệu (dataflow) của nền tảng MapReduce:*
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1/pic.jpg)
 
 Nguồn : [hadoop mapreduce framework](https://www.edupristine.com/blog/hadoop-mapreduce-framework)
 
