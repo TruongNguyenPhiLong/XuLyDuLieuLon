@@ -47,18 +47,18 @@ Thành phần Spark gồm:
 
 - Spark MLlib là một thư viện dành cho các thuật toán học máy phổ biến.
 
-###### Apache Spark là một công cụ tính toán cụm phân tích thống nhất, hiệu suất cao, mã nguồn mở, mục đích chung để xử lý dữ liệu phân tán trên quy mô lớn trên một cụm máy tính hàng hóa (còn được gọi là nút).
+Apache Spark là một công cụ tính toán cụm phân tích thống nhất, hiệu suất cao, mã nguồn mở, mục đích chung để xử lý dữ liệu phân tán trên quy mô lớn trên một cụm máy tính hàng hóa (còn được gọi là nút).
 
-###### Ngăn xếp Spark cung cấp hỗ trợ xử lý hàng loạt, truy vấn tương tác bằng cách sử dụng sql, phát trực tuyến, học máy và xử lý đồ thị.
+Ngăn xếp Spark cung cấp hỗ trợ xử lý hàng loạt, truy vấn tương tác bằng cách sử dụng sql, phát trực tuyến, học máy và xử lý đồ thị.
 
-###### Spark có thể chạy trên nhiều công cụ điện toán cụm khác nhau như trình quản lý cụm độc lập tích hợp sẵn, Hadoop YARN, Apache Mesos, Kubernetes hoặc trong môi trường đám mây như AWS, Azure hoặc Google Cloud.
+Spark có thể chạy trên nhiều công cụ điện toán cụm khác nhau như trình quản lý cụm độc lập tích hợp sẵn, Hadoop YARN, Apache Mesos, Kubernetes hoặc trong môi trường đám mây như AWS, Azure hoặc Google Cloud.
 
 ### Tài liệu kham thảo
 
-1. https://kipalog.com/posts/Tong-quan-mo-hinh-lap-trinh-MapReduce
-2. https://expressmagazine.net/posts/view/3673/ngay-7-gioi-thieu-big-data-mapreduce-la-gi
-3. https://viblo.asia/p/tim-hieu-ve-apache-spark-ByEZkQQW5Q0
-4. https://en.wikipedia.org/wiki/Apache_Spark
-5. https://www.polarsparc.com/xhtml/Spark-1.html
+1. [https://kipalog.com/posts/Tong-quan-mo-hinh-lap-trinh-MapReduce](https://kipalog.com/posts/Tong-quan-mo-hinh-lap-trinh-MapReduce)
+2. [https://expressmagazine.net/posts/view/3673/ngay-7-gioi-thieu-big-data-mapreduce-la-gi](https://expressmagazine.net/posts/view/3673/ngay-7-gioi-thieu-big-data-mapreduce-la-gi)
+3. [https://viblo.asia/p/tim-hieu-ve-apache-spark-ByEZkQQW5Q0](https://viblo.asia/p/tim-hieu-ve-apache-spark-ByEZkQQW5Q0)
+4. [https://en.wikipedia.org/wiki/Apache_Spark](https://en.wikipedia.org/wiki/Apache_Spark)
+5. [https://www.polarsparc.com/xhtml/Spark-1.html](https://www.polarsparc.com/xhtml/Spark-1.html)
 
 
