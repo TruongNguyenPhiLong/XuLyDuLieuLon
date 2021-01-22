@@ -31,7 +31,9 @@ Nguồn : [hadoop mapreduce framework](https://www.edupristine.com/blog/hadoop-m
 Apache Spark là một framework mã nguồn mở tính toán cụm, được phát triển vào năm 2009 bởi AMPLab.
 Spark cung cấp một giao diện để lập trình toàn bộ các cụm với tính song song dữ liệu ngầm, xử lý dữ liệu theo thời gian thực, vừa nhận dữ liệu từ các nguồn vừa thực hiện việc xử lý dữ liệu vừa nhận và khả năng chịu lỗi
  
-(Nguồn https://www.polarsparc.com/xhtml/Spark-1.html)
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1/pic2.jpg)
+ 
+Nguồn : [https://www.polarsparc.com/xhtml/Spark-1.html](https://www.polarsparc.com/xhtml/Spark-1.html)
 
 Thành phần Spark gồm:
 
