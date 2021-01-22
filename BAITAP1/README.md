@@ -21,7 +21,7 @@ Thư viện thủ tục Map() và Reduce() được viết bằng nhiều ngôn 
 - Đưa ra kết quả dữ liệu cuối.
 
 *Một ví dụ luồng dữ liệu (dataflow) của nền tảng MapReduce:*
-![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1/pic.jpg)
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1/pic1.jpg)
 
 Nguồn : [hadoop mapreduce framework](https://www.edupristine.com/blog/hadoop-mapreduce-framework)
 
