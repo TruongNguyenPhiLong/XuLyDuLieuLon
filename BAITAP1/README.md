@@ -2,7 +2,7 @@
 
 
 ### Tìm hiểu MapReduce Và ApacheSpark
-1. Map Reduce
+## 1. Map Reduce
 MapReduce là một mô hình lập trình được thiết kế bởi Google xử lý tập dữ liệu lớn song song, thuật toán được phân tán trên 1 cụm. MapReduce gồm các thủ tục Map và  Reduce.
 - Hàm Map : Các xử lý một cặp (key, value), lọc và phân loại dữ liệu. Dữ liệu này input vào hàm Reduce.
 - Hàm Reduce : Tiếp nhận các (keyI, valueI) thực hiện tổng hợp dữ liệu.
@@ -26,7 +26,7 @@ Thư viện thủ tục Map() và Reduce() được viết bằng nhiều ngôn 
 Nguồn : [hadoop mapreduce framework](https://www.edupristine.com/blog/hadoop-mapreduce-framework)
 
 
-2. Apache Spark
+## 2. Apache Spark
 
 Apache Spark là một framework mã nguồn mở tính toán cụm, được phát triển vào năm 2009 bởi AMPLab.
 Spark cung cấp một giao diện để lập trình toàn bộ các cụm với tính song song dữ liệu ngầm, xử lý dữ liệu theo thời gian thực, vừa nhận dữ liệu từ các nguồn vừa thực hiện việc xử lý dữ liệu vừa nhận và khả năng chịu lỗi
