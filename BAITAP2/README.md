@@ -39,7 +39,7 @@ Hầu hết các thuộc tính kiểm soát cài đặt nội bộ đều có gi
 Với các Available Properties (thuộc tính có sẵn) ta có thể sử dụng để cài đặt cho các ứng dụng, môi trường thực thi, giao diện người dùng, nén và tuần tự hóa, bảo mật, quản lý bộ nhớ, Spark Streaming, SparkR, GraphX, Cluster Managers(Yarn, Mesos),…
 
 Có thể tìm thêm nhiều spark available properties có sẵn tại trang web:
-https://spark.apache.org/docs/latest/configuration.html
+[https://spark.apache.org/docs/latest/configuration.html](https://spark.apache.org/docs/latest/configuration.html)
 
 ## 2. Spark RDD
 
@@ -86,7 +86,7 @@ Ngoài phương thức textFile thì API Python của Spark cũng hỗ trợ m�
 RDD hỗ trợ hai loại hoạt động là Transformations và Actions. Ảnh minh họa 2 loại hoạt động cơ bản có thể sử dụng với RDD:
 ![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh1.png)
 
-(Nguồn : https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/ )
+Nguồn : [https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/](https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/) 
 
 Transformations: Một tập dữ liệu (dataset) mới được tạo từ một tập dữ liệu hiện có. Mỗi tập dữ liệu được chuyển qua một hàm. Kết quả giá trị trả về là nó sẽ gửi một RDD mới.
 
@@ -108,15 +108,15 @@ Một số Action:
 
 Tham khảo các trang này để biết danh sách đầy đủ các Transformations và Actions của RDD.
 
-https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/
+[https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/)
 
-https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/
+[https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/)
 
 Danh mục các loại RDD:
 
 ![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh2.jpg)
 
-(Nguồn : https://www.slideshare.net/cfregly/spark-streaming-40659876 )
+Nguồn : [https://www.slideshare.net/cfregly/spark-streaming-40659876](https://www.slideshare.net/cfregly/spark-streaming-40659876)
 
 ### Ưu điểm của RDD
 
@@ -164,15 +164,15 @@ young = users.filter(users.age < 21)
 ```
 ## TÀI LIỆU THAM KHẢO
 
-1.	https://spark.apache.org/docs/latest/configuration.html
-2.	https://spark.apache.org/docs/latest/rdd-programming-guide.html
-3.	http://techalpine.com/what-is-apache-spark/?lang=vi
-4.	https://sparkbyexamples.com/spark-rdd-tutorial/
-5.	https://sparkbyexamples.com/
-6.	https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd
-7.	https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c
-8.	https://www.educba.com/what-is-rdd/
-9.	https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/
-10.	https://www.quora.com/What-are-the-advantages-of-RDD
-11.	https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm
-12.	https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html
+1.	[https://spark.apache.org/docs/latest/configuration.html](https://spark.apache.org/docs/latest/configuration.html)
+2.	[https://spark.apache.org/docs/latest/rdd-programming-guide.html](https://spark.apache.org/docs/latest/rdd-programming-guide.html)
+3.	[http://techalpine.com/what-is-apache-spark/?lang=vi](http://techalpine.com/what-is-apache-spark/?lang=vi)
+4.	[https://sparkbyexamples.com/spark-rdd-tutorial/](https://sparkbyexamples.com/spark-rdd-tutorial/)
+5.	[https://sparkbyexamples.com/](https://sparkbyexamples.com/)
+6.	[https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd](https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd)
+7.	[https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c](https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c)
+8.	[https://www.educba.com/what-is-rdd/](https://www.educba.com/what-is-rdd/)
+9.	[https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/](https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/)
+10.	[https://www.quora.com/What-are-the-advantages-of-RDD](https://www.quora.com/What-are-the-advantages-of-RDD)
+11.	[https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm](https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm)
+12.	[https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html](https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html)
