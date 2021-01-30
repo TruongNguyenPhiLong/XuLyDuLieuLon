@@ -84,5 +84,35 @@ Ngoài phương thức textFile thì API Python của Spark cũng hỗ trợ m�
 ### Hoạt động RDD:
 
 RDD hỗ trợ hai loại hoạt động là Transformations và Actions. Ảnh minh họa 2 loại hoạt động cơ bản có thể sử dụng với RDD:
-
 ![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh1.png)
+
+(Nguồn : https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/ )
+
+Transformations: Một tập dữ liệu (dataset) mới được tạo từ một tập dữ liệu hiện có. Mỗi tập dữ liệu được chuyển qua một hàm. Kết quả giá trị trả về là nó sẽ gửi một RDD mới.
+
+Actions: Trả về giá trị cho chương trình điều khiển sau khi thực thi mã trên tập dữ liệu, thực hiện các tính toán trên tập dữ liệu cần thiết. RDD trả về các giá trị không phải RDD. Các giá trị này được lưu trữ trên hệ thống bên ngoài.
+
+Một số Transformation:
+
+- distinct: loại bỏ trùng lắp trong RDD.
+- map: Trả về một RDD mới bằng cách áp dụng hàm trên từng phần tử dữ liệu. Trong Python sử dụng lambda với từng phần tử để truyền vào map.
+- filter: Trả về một RDD mới được hình thành bằng cách chọn các phần tử của nguồn mà hàm trả về true. 
+
+Một số Action:
+
+- count: Đếm số dòng, phần tử dữ liệu trong RDD.
+- reduce: Tổng hợp các phần tử dữ liệu thành một RDD.
+- first: lấy giá trị đầu tiên của RDD
+- max: lấy giá trị lớn nhất của RDD
+- min: lấy giá trị nhỏ nhất của RDD
+
+Tham khảo các trang này để biết danh sách đầy đủ các Transformations và Actions của RDD.
+
+https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/
+
+https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/
+
+Danh mục các loại RDD:
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh2.jpg)
+
+(Nguồn : https://www.slideshare.net/cfregly/spark-streaming-40659876 )
