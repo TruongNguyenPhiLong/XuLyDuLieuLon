@@ -113,6 +113,66 @@ https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/
 https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/
 
 Danh mục các loại RDD:
+
 ![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh2.jpg)
 
 (Nguồn : https://www.slideshare.net/cfregly/spark-streaming-40659876 )
+
+### Ưu điểm của RDD
+
+Các đặc tính, ưu điểm chính:
+
+- Xử lý trong bộ nhớ: Dữ liệu bên trong RDD được lưu trữ trong bộ nhớ chứ không phải đĩa, do đó tăng tốc độ thực thi của Spark vì dữ liệu đang được tìm nạp từ dữ liệu trong bộ nhớ
+- Tính bất biến: RDD được tạo ra không thể được sửa đổi. Bất kỳ biến đổi nào trên nó sẽ tạo ra một RDD mới.
+- Khả năng chịu lỗi: Bất kỳ hoạt động RDD nào không thành công, nó sẽ có thể tính toán lại phân vùng bị mất của RDD từ bản gốc.
+- Tiến hóa lười biếng: Dữ liệu bên trong RDD được giữ lại và chỉ đánh giá khi một hành động được kích hoạt.
+- Phân vùng: Các RDD được chia thành các phần nhỏ hơn gọi là phân vùng mặc định, nó phân vùng theo số lượng lõi có sẵn.
+- Tính bền bỉ: Việc có thể được tái sử dụng khiến chúng trở nên bền bỉ.
+- Không có giới hạn:  Không có giới hạn về số lượng RDD có thể có bao nhiêu tùy thích chỉ phụ thuộc vào kích thước của bộ nhớ và ổ đĩa.
+
+### Nhược điểm của RDD
+
+- Spark RDD không phù hợp nhiều cho các ứng dụng thực hiện cập nhật cho kho lưu trữ trạng thái như hệ thống lưu trữ cho ứng dụng web.
+- Một RDD chỉ có thể có trong một  SparkContext và RDD có thể có tên và mã định danh duy nhất (id).
+
+## 3. Spark DataFrame
+
+DataFrame là một tập hợp dữ liệu phân tán được tổ chức thành các cột được đặt tên. Về mặt khái niệm, nó tương đương với một bảng trong cơ sở dữ liệu quan hệ hoặc một khung dữ liệu trong R / Python, nhưng được tối ưu hóa phong phú hơn. DataFrames có thể được xây dựng từ nhiều nguồn như tệp dữ liệu có cấu trúc, bảng trong Hive, cơ sở dữ liệu bên ngoài hoặc RDD hiện có.
+
+### Các tính năng của DataFrame
+
+- Khả năng xử lý dữ liệu có kích thước từ Kilobyte (Kb) đến Petabyte (PB) trên một cụm node đơn đến cụm lớn.
+- Hỗ trợ các định dạng dữ liệu (Avro, csv, …) và hệ thống lưu trữ khác nhau (HDFS, bảng HIVE, mysql, ....).
+- Tối ưu hóa hiện đại và tạo mã thông qua trình tối ưu hóa Spark SQL Catalyst  (tree transformation framework).
+- Có thể dễ dàng tích hợp với tất cả các công cụ và framework xử lý dữ liệu lớn thông qua Spark-Core.
+- Cung cấp API cho Python, Java, Scala và R.
+
+### Tạo DataFrame
+
+Cách đơn giản nhất để tạo DataFrame là từ bộ sưu tập seq. DataFrame cũng có thể được tạo từ RDD và bằng cách đọc các tệp từ một số nguồn. 
+
+Ví dụ code python tạo DataFrame:
+```
+# Tạo dataframe từ bảng users trong bảng Hive.
+users = context.table("users")
+
+# từ các tệp JSON trong S3
+logs = context.load("s3n://path/to/data.json", "json")
+
+# Tạo một DataFrame chỉ chứa những người trẻ dưới 21 tuổi
+young = users.filter(users.age < 21) 
+```
+## 1. TÀI LIỆU THAM KHẢO
+
+1.	https://spark.apache.org/docs/latest/configuration.html
+2.	https://spark.apache.org/docs/latest/rdd-programming-guide.html
+3.	http://techalpine.com/what-is-apache-spark/?lang=vi
+4.	https://sparkbyexamples.com/spark-rdd-tutorial/
+5.	https://sparkbyexamples.com/
+6.	https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd
+7.	https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c
+8.	https://www.educba.com/what-is-rdd/
+9.	https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/
+10.	https://www.quora.com/What-are-the-advantages-of-RDD
+11.	https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm
+12.	https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html
