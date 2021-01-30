@@ -85,4 +85,4 @@ Ngoài phương thức textFile thì API Python của Spark cũng hỗ trợ m�
 
 RDD hỗ trợ hai loại hoạt động là Transformations và Actions. Ảnh minh họa 2 loại hoạt động cơ bản có thể sử dụng với RDD:
 
-![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh1.jpg)
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2/Anh1.png)
