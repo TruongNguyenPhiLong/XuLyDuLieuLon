@@ -162,7 +162,7 @@ logs = context.load("s3n://path/to/data.json", "json")
 # Tạo một DataFrame chỉ chứa những người trẻ dưới 21 tuổi
 young = users.filter(users.age < 21) 
 ```
-## 1. TÀI LIỆU THAM KHẢO
+## TÀI LIỆU THAM KHẢO
 
 1.	https://spark.apache.org/docs/latest/configuration.html
 2.	https://spark.apache.org/docs/latest/rdd-programming-guide.html
