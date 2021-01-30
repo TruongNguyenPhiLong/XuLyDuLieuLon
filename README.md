@@ -1,4 +1,6 @@
 ## Welcome to GitHub Pages
 
 
-[tuan1](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1)
+[BAITAP1](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP1)
+
+[BAITAP2](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAP2)
