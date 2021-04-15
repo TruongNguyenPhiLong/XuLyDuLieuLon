@@ -1,5 +1,4 @@
-## Bài tập tuần 1
-## Tìm hiểu MapReduce Và ApacheSpark
+# Bài tập tuần 1: Tìm hiểu MapReduce Và ApacheSpark
 
 ## 1. Map Reduce
 MapReduce là một mô hình lập trình được thiết kế bởi Google xử lý tập dữ liệu lớn song song, thuật toán được phân tán trên 1 cụm. MapReduce gồm các thủ tục Map và  Reduce.
