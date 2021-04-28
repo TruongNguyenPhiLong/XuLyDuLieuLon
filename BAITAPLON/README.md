@@ -1,6 +1,6 @@
 
 
-![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAPLON/Picture.png)
+![](https://truongnguyenphilong.github.io/XuLyDuLieuLon/BAITAPLON/Picture1.png)
 
 ## TÀI LIỆU THAM KHẢO
 
