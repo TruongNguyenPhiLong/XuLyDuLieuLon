@@ -267,6 +267,7 @@ Với Machine Learning trên PySpark thì ta cũng sẽ trải qua các bước 
 3.	Xây dựng mô hình 
 4.	Huấn luyện dữ liệu 
 5.	Đánh giá mô hình
+
 Link Source Code: [https://colab.research.google.com/drive/10YXuTPJWNSzwJEZS0lMTaUkk9A4gr7w_?usp=sharing]( https://colab.research.google.com/drive/10YXuTPJWNSzwJEZS0lMTaUkk9A4gr7w_?usp=sharing)
 
 Mô hình được xây dựng ở source code trên là Logistic Regression Model:
