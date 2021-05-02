@@ -248,8 +248,48 @@ Machine Learning và Big Data có một mối quan hệ tương quan với nhau.
 - Khai phá dữ liệu (Data mining): khám phá các thông tin có giá trị, đưa ra các dự đoán từ dữ liệu. Đây chính là điểm mấu chốt trong vấn đề về big data, cho phép kiếm thông tin hữu ích trong các dữ liệu lớn, phát hiện các quy luật(Association rules), bất thường(Anomaly detection) và dự đoán (Predictions).
 
 ## 2. Phân loại thuật toán machine learning
-- Học có giám sát (supervised) : mục tiêu của mô hình là tìm ra luật để ánh xạ giữa đầu vào và đầu ra dựa trên các cặp (đầu vào, đầu ra) đã biết. Học có giám sát còn được chia nhỏ ra thành hai loại : Classification (Phân loại) và Regression (Hồi quy) mỗi loại có các thuật toán phổ biến như Linear Regression, Logistic Regression, Linear Classifier,…
-- Học không giám sát (unsupervised) : mục tiêu của mô hình là tự tìm ra các mẫu dữ liệu ẩn. Trong học không giám sát ta không biết dữ liệu đầu ra hay nhãn của dữ liệu mà chỉ có dữ liệu đầu vào. Điển hình là bài toán phân cụm (clustering algorithm) với thuật toán phổ biến để giải quyết đó là K-means (phân cụm chỉ học từ tập dữ liệu đầu vào).
+- Học có giám sát (supervised) : mục tiêu của mô hình là tìm ra luật để ánh xạ giữa đầu vào và đầu ra dựa trên các cặp (đầu vào, đầu ra) đã biết. Học có giám sát còn được chia nhỏ ra thành hai loại : Classification (Phân loại) và Regression (Hồi quy) mỗi loại có các thuật toán phổ biến như Linear Regression, Logistic Regression, Linear Classifier,…Code ví dụ về Linear Regression:
+```
+from pyspark.mllib.regression import LinearRegressionWithSGD
+from numpy import array
+
+# Load and parse the data
+data = sc.textFile("mllib/data/ridge-data/lpsa.data")
+parsedData = data.map(lambda line: array([float(x) for x in line.replace(',', ' ').split(' ')]))
+
+# Build the model
+model = LinearRegressionWithSGD.train(parsedData)
+
+# Evaluate the model on training data
+valuesAndPreds = parsedData.map(lambda point: (point.item(0),
+        model.predict(point.take(range(1, point.size)))))
+MSE = valuesAndPreds.map(lambda (v, p): (v - p)**2).reduce(lambda x, y: x + y)/valuesAndPreds.count()
+print("Mean Squared Error = " + str(MSE))
+```
+- Học không giám sát (unsupervised) : mục tiêu của mô hình là tự tìm ra các mẫu dữ liệu ẩn. Trong học không giám sát ta không biết dữ liệu đầu ra hay nhãn của dữ liệu mà chỉ có dữ liệu đầu vào. Điển hình là bài toán phân cụm (clustering algorithm) với thuật toán phổ biến để giải quyết đó là K-means (phân cụm chỉ học từ tập dữ liệu đầu vào). Code ví dụ về phân cụm:
+
+```
+from pyspark.mllib.clustering import KMeans
+from numpy import array
+from math import sqrt
+
+# Load and parse the data
+data = sc.textFile("kmeans_data.txt")
+parsedData = data.map(lambda line: array([float(x) for x in line.split(' ')]))
+
+# Build the model (cluster the data)
+clusters = KMeans.train(parsedData, 2, maxIterations=10,
+        runs=30, initialization_mode="random")
+
+# Evaluate clustering by computing Within Set Sum of Squared Errors
+def error(point):
+    center = clusters.centers[clusters.predict(point)]
+    return sqrt(sum([x**2 for x in (point - center)]))
+
+WSSSE = parsedData.map(lambda point: error(point)).reduce(lambda x, y: x + y)
+print("Within Set Sum of Squared Error = " + str(WSSSE))
+```
+
 - Học nửa giám sát (semi-supervised): kết hợp các ví dụ có gắn nhãn và không gắn nhãn để sinh một hàm hoặc một bộ phân loại thích hợp.
 - Học tăng cường (reinforcement learning): tự động xác định hành vi dựa trên hoàn cảnh để đạt được lợi ích cao nhất.
 Học có giám sát và học không giám sát là thuật toán kinh điển và được sử dụng phổ biến nhất.
@@ -288,12 +328,12 @@ Kết quả sau khi thực hiện xong ta đánh giá model Logistic Regression,
 7.  [https://spark.apache.org/docs/latest/rdd-programming-guide.html](https://spark.apache.org/docs/latest/rdd-programming-guide.html)
 8.  [http://techalpine.com/what-is-apache-spark/?lang=vi](http://techalpine.com/what-is-apache-spark/?lang=vi)
 9.  [https://sparkbyexamples.com/spark-rdd-tutorial/](https://sparkbyexamples.com/spark-rdd-tutorial/)
-10. [https://sparkbyexamples.com/](https://sparkbyexamples.com/)
+10. [https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html](https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html)
 11. [https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd](https://laptrinh.vn/books/apache-spark/page/apache-spark-rdd)
 12. [https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c](https://helpex.vn/article/rdd-trong-spark-la-gi-va-tai-sao-chung-ta-can-no-5c6afe5bae03f628d053a84c)
 13. [https://www.educba.com/what-is-rdd/](https://www.educba.com/what-is-rdd/)
 14. [https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/](https://intellipaat.com/blog/tutorial/spark-tutorial/programming-with-rdds/)
-15. [https://www.quora.com/What-are-the-advantages-of-RDD](https://www.quora.com/What-are-the-advantages-of-RDD)
+15. [https://spark.apache.org/docs/1.2.0/mllib-clustering.html](https://spark.apache.org/docs/1.2.0/mllib-clustering.html)
 16. [https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm](https://www.tutorialspoint.com/spark_sql/spark_sql_dataframes.htm)
 17. [https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html](https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html)
 18. [https://khanh-personal.gitbook.io/ml-book-vn/machine-learning-la-gi](https://khanh-personal.gitbook.io/ml-book-vn/machine-learning-la-gi)
