@@ -231,6 +231,74 @@ logs = context.load("s3n://path/to/data.json", "json")
 # Tạo một DataFrame chỉ chứa những người trẻ dưới 21 tuổi
 young = users.filter(users.age < 21) 
 ```
+Tạo dataframe từ rdd
+```
+spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+rdd = spark.sparkContext.parallelize(data)
+dfFromRDD = rdd.toDF()
+dfFromRDD.printSchema()
+```
+Kết quả sẽ ra
+```
+root
+ |-- _1: string (nullable = true)
+ |-- _2: string (nullable = true)
+```
+Tạo DataFrame từ dữ liệu của tệp CSV
+```
+df2 = spark.read.csv("/src/resources/file.csv")
+```
+Tạo DataFrame từ dữ liệu của tệp văn bản TxT
+```
+df2 = spark.read.text("/src/resources/file.txt")
+```
+Tạo DataFrame từ dữ liệu của tệp JSON
+```
+df2 = spark.read.json("/src/resources/file.json")
+```
+### Thao tác xử lý dataframe
+Để Chọn 1 cột trong dataframe ta sử dụng Select Column
+```
+df.select("*")                        // trả về 1 dataframe với tất cả các cột
+df.select(field_name_1, field_name_2) // trả về 1 dataframe với dữ liệu có tên field_name_1 và field_name_2
+df.select(df.columns[2:4])            // trả về 1 dataframe với cột 2 đến cột 3
+```
+Để thao tác với dữ liệu ta có nhiều cách khác nhau như: 
+WithColumn để thao tác dữ liệu trực tiếp
+```
+df.withColumn("salary",col("salary").cast("Integer")) // thay đổi dữ liệu
+df.withColumn("salary",col("salary")*100)             // cập nhật dữ liệu
+```
+Drop để xóa cột
+```
++-------------+----------+------+
+|employee_name|department|salary|
++-------------+----------+------+
+|Jen          |Finance   |3900  |
+|Maria        |Finance   |3000  |
+|Scott        |Finance   |3300  |
+|Michael      |Sales     |4600  |
+|Kumar        |Marketing |2000  |
+|Robert       |Sales     |4100  |
+|James        |Sales     |3000  |
+|Jeff         |Marketing |3000  |
++-------------+----------+------+
+
+df.drop(["employee_name","department"])
+
++------+
+|salary|
++------+
+|3900  |
+|3000  |
+|3300  |
+|4600  |
+|2000  |
+|4100  |
+|3000  |
+|3000  |
++------+
+```
 
 # Phần 3: TÌM HIỂU MACHINE LEARNING VÀ XÂY DỰNG MACHINE LEARNING MODEL TRÊN PYSPARK 
 
