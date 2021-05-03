@@ -321,14 +321,14 @@ Machine Learning và Big Data có một mối quan hệ tương quan với nhau.
 from pyspark.mllib.regression import LinearRegressionWithSGD
 from numpy import array
 
-# Load and parse the data
+// Load and parse the data
 data = sc.textFile("mllib/data/ridge-data/lpsa.data")
 parsedData = data.map(lambda line: array([float(x) for x in line.replace(',', ' ').split(' ')]))
 
-# Build the model
+// Build the model
 model = LinearRegressionWithSGD.train(parsedData)
 
-# Evaluate the model on training data
+// Evaluate the model on training data
 valuesAndPreds = parsedData.map(lambda point: (point.item(0),
         model.predict(point.take(range(1, point.size)))))
 MSE = valuesAndPreds.map(lambda (v, p): (v - p)**2).reduce(lambda x, y: x + y)/valuesAndPreds.count()
@@ -341,15 +341,15 @@ from pyspark.mllib.clustering import KMeans
 from numpy import array
 from math import sqrt
 
-# Load and parse the data
+// Load and parse the data
 data = sc.textFile("kmeans_data.txt")
 parsedData = data.map(lambda line: array([float(x) for x in line.split(' ')]))
 
-# Build the model (cluster the data)
+// Build the model (cluster the data)
 clusters = KMeans.train(parsedData, 2, maxIterations=10,
         runs=30, initialization_mode="random")
 
-# Evaluate clustering by computing Within Set Sum of Squared Errors
+// Evaluate clustering by computing Within Set Sum of Squared Errors
 def error(point):
     center = clusters.centers[clusters.predict(point)]
     return sqrt(sum([x**2 for x in (point - center)]))
