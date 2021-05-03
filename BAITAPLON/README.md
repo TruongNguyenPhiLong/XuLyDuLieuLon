@@ -317,19 +317,17 @@ Machine Learning và Big Data có một mối quan hệ tương quan với nhau.
 
 ## 2. Phân loại thuật toán machine learning
 - Học có giám sát (supervised) : mục tiêu của mô hình là tìm ra luật để ánh xạ giữa đầu vào và đầu ra dựa trên các cặp (đầu vào, đầu ra) đã biết. Học có giám sát còn được chia nhỏ ra thành hai loại : Classification (Phân loại) và Regression (Hồi quy) mỗi loại có các thuật toán phổ biến như Linear Regression, Logistic Regression, Linear Classifier,…Code ví dụ về Linear Regression:
+
 ```
 from pyspark.mllib.regression import LinearRegressionWithSGD
 from numpy import array
 
-// Load and parse the data
-data = sc.textFile("mllib/data/ridge-data/lpsa.data")
+data = sc.textFile("mllib/data/ridge-data/lpsa.data")  // Load and parse the data
 parsedData = data.map(lambda line: array([float(x) for x in line.replace(',', ' ').split(' ')]))
 
-// Build the model
-model = LinearRegressionWithSGD.train(parsedData)
+model = LinearRegressionWithSGD.train(parsedData) // Build the model
 
-// Evaluate the model on training data
-valuesAndPreds = parsedData.map(lambda point: (point.item(0),
+valuesAndPreds = parsedData.map(lambda point: (point.item(0),    // Evaluate the model on training data
         model.predict(point.take(range(1, point.size)))))
 MSE = valuesAndPreds.map(lambda (v, p): (v - p)**2).reduce(lambda x, y: x + y)/valuesAndPreds.count()
 print("Mean Squared Error = " + str(MSE))
@@ -341,16 +339,14 @@ from pyspark.mllib.clustering import KMeans
 from numpy import array
 from math import sqrt
 
-// Load and parse the data
-data = sc.textFile("kmeans_data.txt")
+
+data = sc.textFile("kmeans_data.txt")    // Load and parse the data
 parsedData = data.map(lambda line: array([float(x) for x in line.split(' ')]))
 
-// Build the model (cluster the data)
-clusters = KMeans.train(parsedData, 2, maxIterations=10,
+clusters = KMeans.train(parsedData, 2, maxIterations=10,   // Build the model (cluster the data)
         runs=30, initialization_mode="random")
 
-// Evaluate clustering by computing Within Set Sum of Squared Errors
-def error(point):
+def error(point):    // Evaluate clustering by computing Within Set Sum of Squared Errors
     center = clusters.centers[clusters.predict(point)]
     return sqrt(sum([x**2 for x in (point - center)]))
 
